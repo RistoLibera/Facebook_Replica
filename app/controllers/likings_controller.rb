@@ -5,6 +5,6 @@ class LikingsController < ApplicationController
   def create
   end
 
-  def update
+  def destroy
   end
 end
