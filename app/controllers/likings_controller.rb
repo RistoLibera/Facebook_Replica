@@ -3,6 +3,7 @@ class LikingsController < ApplicationController
   end
 
   def create
+    @liking = current_user.likings.build
   end
 
   def destroy

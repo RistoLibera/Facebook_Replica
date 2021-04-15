@@ -1,0 +1,28 @@
+
+<div>
+    <% post.order("created_at DESC").each do |post| %>
+        <div style = "outline: 2px solid black;" >
+            <div >
+                <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
+            </div>
+            <div style = "display: flex; justify-content: space-around; align-items: center;" >
+                <p>Title: <%= post.title %></p>
+                <p>Body: <%= post.body %></p>
+                <p>Time: <%= time_ago_in_words(post.created_at) %></p>
+            </div>
+            <% if post.user_id == current_user.id %>
+                <div style = "display: flex; justify-content: space-around;" >
+                    <p><%= link_to "Edit", edit_post_path(post) %></p>
+                    <p><%= link_to "Delete", post_path(post), method: :delete %></p>
+                </div>
+            <% end %>
+            <!-- liking or comment  and  how many comments?-->
+            <div>
+
+            <p><%= pluralize(post.comments.count, "Comment") %></p>
+            </div>
+            <%= render partial: "comments/new_comment", locals: { post: post } %><br>
+            <%= render partial: "comments/index_comment", locals: { post: post } %>
+        </div><br>
+    <% end %>
+</div>

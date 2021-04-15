@@ -1,0 +1,11 @@
+<h1>comment#new</h1>
+<div>
+    <%= form_with model: Comment.new do |f| %>
+        <%= f.hidden_field :post_id, value: post.id %>
+        <%= f.text_field :content, placeholder: "Say you piece!", autofocus: true %><br>
+        <%= f.submit %>
+    <% end %>
+</div>
+
+
+

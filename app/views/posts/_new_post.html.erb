@@ -1,6 +1,6 @@
-<h1>Post#edit</h1>
+<h1>Post#new</h1>
 <div>
-    <%= form_with model: @post do |f| %>
+    <%= form_with model: Post.new do |f| %>
         <%= f.text_field :title, placeholder: "You need a title!" %><br>
         <%= f.text_area :body, size: "70x5" %>
         <%= f.submit %>

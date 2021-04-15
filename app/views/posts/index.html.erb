@@ -1,22 +1,9 @@
 <h1>Post#index</h1>
 
-<%= render partial: "new_post" %>
+<%= render partial: "new_post" %><br>
 
 <% if @post.any?  %>
-    <% @post.each do |p| %>
-        <div style = "display: flex; justify-content: space-around;" >
-            <p>User_id: <%= link_to p.user_id, user_path(p.user_id) %></p>
-            <pre style = "background-color: coral;" ><%= link_to "       ", post_path(p), method: :get, style: "text-decoration: none;" %></pre>
-        </div>
-        <div style = "display: flex; justify-content: space-around; align-items: center;" >
-            <p>Title: <%= p.title %></p>
-            <p>Body: <%= p.body %></p>
-            <% if p.user_id == current_user.id %>
-                <p><%= link_to "Edit", edit_post_path(p) %></p>
-                <p><%= link_to "Delete", post_path(p), method: :delete %></p>
-            <% end %>
-        </div>
-    <% end %>
+    <%= render partial: "index_post", locals: { post: @post } %>    
 <% else %>
     <p>This is a lonely universe</p>
 <% end %>

@@ -60,5 +60,3 @@ gem 'devise'
 # Faker
 gem 'faker'
 
-# Css framework
-gem 'bulma-rails'
