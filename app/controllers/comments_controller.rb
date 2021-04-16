@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:notice] = "Comment is created!"
-      redirect_to post_path(@comment.post_id)
+      redirect_to posts_path
     else
       flash[:alert] = "Error! Comment is not created!"
       render :new
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     flash[:notice] = "Comment is deleted!"
-    redirect_back(fallback_location: post_path(@comment.post_id))
+    redirect_to posts_path
   end
 
   private

@@ -1,0 +1,11 @@
+<div>
+  <% if has_liking?(post) %>
+    <%= link_to "liking", liking_path(current_liking(post)), method: :delete %>
+
+  <% else %>
+    <%= link_to "new liking", likings_path(post_id: post.id), method: :post %>
+
+  <% end %>
+
+
+</div>

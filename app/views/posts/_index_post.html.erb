@@ -1,34 +1,42 @@
 
 <div>
-    <% post.order("created_at DESC").each do |post| %>
-        <div style = "outline: 2px solid black;" >
-            <div >
-                <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
-                <% if post.user_id == current_user.id %>
-                    <div class="dropdown">
-                        <button class="dropbtn">...</button>
-                        <div class="dropdown-content" >
-                            <%= link_to "Edit", edit_post_path(post) %>
-                            <%= link_to "Delete", post_path(post), method: :delete %>
-                        </div>
-                    </div>
-                <% end %>
+  <% post.order("created_at DESC").each do |post| %>
+    <div style = "outline: 2px solid black;" >
+      <!-- User icon; edit or delete post -->
+      <div>
+        <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
+        <% if post.user_id == current_user.id %>
+          <div class="dropdown">
+            <button class="dropbtn">...</button>
+            <div class="dropdown-content" >
+              <%= link_to "Edit", edit_post_path(post) %>
+              <%= link_to "Delete", post_path(post), method: :delete %>
             </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- Post body, created time -->
+      <div style = "display: flex; justify-content: space-around;" >
+        <p>Body: <%= post.body %></p>
+        <p>Time: <%= time_ago_in_words(post.created_at) %></p>
+      </div>
 
+      <!-- likings; comments -->
+      <div style = "display: flex; justify-content: space-around;" >
+        <p><%= pluralize(post.likings.count, "Liking") %></p>
+        <p><%= pluralize(post.comments.count, "Comment") %></p>
+      </div>
 
-            <div style = "display: flex; justify-content: space-around; align-items: center;" >
-                <p>Title: <%= post.title %></p>
-                <p>Body: <%= post.body %></p>
-                <p>Time: <%= time_ago_in_words(post.created_at) %></p>
-            </div>
+      <!-- do liking, comment -->
+      <div style = "display: flex; justify-content: space-around;" >
+        <%= render partial: "likings/liking_button", locals: { post: post } %>
+        <%= render partial: "comments/new_comment", locals: { post: post } %>
+      </div>
 
-            <!-- liking or comment  and  how many comments?-->
-            <div>
-
-            <p style = "display: flex; justify-content: right; padding-right: 15px;" ><%= pluralize(post.comments.count, "Comment") %></p>
-            </div>
-            <%= render partial: "comments/new_comment", locals: { post: post } %><br>
-            <%= render partial: "comments/index_comment", locals: { post: post } %>
-        </div><br>
-    <% end %>
+      <!-- show comment -->
+      <div>
+        <%= render partial: "comments/index_comment", locals: { post: post } %>
+      </div>
+    </div><br>
+  <% end %>
 </div>

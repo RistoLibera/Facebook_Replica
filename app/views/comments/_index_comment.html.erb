@@ -1,14 +1,14 @@
 
 <div>
-    <% if post.comments.any? %>
-        <% post.comments.order("created_at DESC").each do |comment| %>
-            <p>User: <%= comment.user_id %></p>
-            <p>Content: <%= comment.content %></p>
-            <p>Time: <%= time_ago_in_words(comment.created_at) %></p><br>
-            <% if comment.user_id == current_user.id %>
-                <%= link_to "Edit", edit_comment_path(comment) %>
-                <%= link_to "Delete", comment_path(comment), method: :delete %>
-            <% end %>
-        <% end %>
+  <% if post.comments.any? %>
+    <% post.comments.order("created_at DESC").each do |comment| %>
+      <p>User: <%= comment.user_id %></p>
+      <p>Content: <%= comment.content %></p>
+      <p>Time: <%= time_ago_in_words(comment.created_at) %></p><br>
+      <% if comment.user_id == current_user.id %>
+        <%= link_to "Edit", edit_comment_path(comment) %>
+        <%= link_to "Delete", comment_path(comment), method: :delete %>
+      <% end %>
     <% end %>
+  <% end %>
 </div><br>

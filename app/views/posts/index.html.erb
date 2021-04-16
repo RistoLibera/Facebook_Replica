@@ -3,8 +3,11 @@
 <%= render partial: "new_post" %><br>
 
 <% if @post.any?  %>
-    <%= render partial: "index_post", locals: { post: @post } %>    
+  <%= render partial: "index_post", locals: { post: @post } %>    
 <% else %>
-    <p>This is a lonely universe</p>
+  <p>This is a lonely universe</p>
 <% end %>
+
+
+
 
