@@ -1,12 +1,22 @@
-<h1>Post#index</h1>
+<div style = "display: flex; justify-content: space-around;" >
 
-<%= render partial: "new_post" %><br>
 
-<% if @post.any?  %>
-  <%= render partial: "index_post", locals: { post: @post } %>    
-<% else %>
-  <p>This is a lonely universe</p>
-<% end %>
+  <div>
+    <p>11111111</p>
+  </div>
+
+  <div>
+    <%= render partial: "new_post" %><br>
+    <h1>Post#index</h1>
+    <% if @post.any?  %>
+      <%= render partial: "all_posts", locals: { post: @post } %>    
+    <% else %>
+      <p>This is a lonely universe</p>
+    <% end %>
+  </div>
+</div>
+
+
 
 
 

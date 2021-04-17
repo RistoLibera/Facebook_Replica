@@ -9,10 +9,9 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destroy
-  end
 
   def index
+    @user = User.all
   end
 
   private

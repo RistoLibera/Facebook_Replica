@@ -9,11 +9,10 @@ class LikingsController < ApplicationController
     @liking = current_user.likings.build(post_id: params[:post_id])
     if @liking.save
       flash[:notice] = "Liking is created!"
-      redirect_to posts_path
     else
       flash[:alert] = "Error! Liking is not created!"
     end
-
+    redirect_to posts_path
   end
 
   def destroy

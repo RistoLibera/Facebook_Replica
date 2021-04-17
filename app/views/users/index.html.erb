@@ -1,0 +1,25 @@
+<div style = "display: flex; justify-content: space-around;" >
+
+  <div>
+    <!-- Friend request -->
+    <div>
+      <%= render partial: "requests/all_requests", locals: { users: @user } %>
+    </div>
+
+    <!-- Other User -->
+    <div>
+    <% if @user.any? %>
+      <%= render partial: "all_users", locals: { user: @user } %>    
+    <% else %>
+      <p>No one</p>
+    <% end %>
+
+    </div>
+    
+  </div>
+
+  <div>
+    <p>profile</p>
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+
+<% user.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
+  <!-- Could only send one request per user --> 
+  <% if Request.all.all? { |request| request.user_id != user.id } %>
+    <div style = "display: flex;" >
+      <div>
+        <%= link_to "Profile", user_path(user) %>
+      </div>
+      <div>
+        <p><%= user.fullname %></p>
+        <!-- condition --> 
+        <p><%= link_to "Add", requests_path(friend_id: user.id), method: :post %> </p>
+        <p><%= link_to "Remove",root_path %> </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
