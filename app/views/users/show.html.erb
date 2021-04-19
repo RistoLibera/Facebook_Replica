@@ -1,18 +1,38 @@
 <h1>Users#show</h1>
-<p>Icon</p>
-<p>Coverphoto</p>
-<br>
-<p>Personal sign</p>
-<br>
-<p>Post Friend    <span style="padding-left:68px;"></span>        Edit Profile</p>
+<div style = "display: flex; justify-content: space-around;" >
 
+  <p>Icon</p>
+  <p>Coverphoto</p>
+</div><br>
+
+<div style = "display: flex; justify-content: center;" >
+  <p><%= @user.fullname%></p>
+</div>
+
+<div style = "display: flex; justify-content: center;" >
+  <p>Personal sign</p>
+</div>
+
+<div style = "display: flex; justify-content: space-around;" >
+  <div>
+    <p>Post</p> 
+  </div>
+
+  <div>
+    <p>About</p> 
+    <!-- has bio birthday fullname -->
+  </div>
+
+  <div>
+    <p>Friend</p> 
+    <!-- can delete friends -->
+  </div>
+
+  <div>
+    <p>Edit Profile</p> 
+  </div>
+</div>
 
 <br>
 
-
-<p><%= @user.firstname %> <%= @user.lastname %></p>
-<p><%= @user.birthday %> </p>
-<p><%= @user.gender %> </p>
-<br>
-<p>Bio</p>
 
