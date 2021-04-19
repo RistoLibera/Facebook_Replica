@@ -1,0 +1,36 @@
+<div style = "display: flex; justify-content: space-around;" >
+  <p>Icon</p>
+  <p>Coverphoto</p>
+</div><br>
+
+<div style = "display: flex; justify-content: center;" >
+  <p><%= @user.fullname%></p>
+</div>
+
+<div style = "display: flex; justify-content: center;" >
+  <p>Personal sign</p>
+</div>
+
+
+<!-- user options  -->
+<div style = "display: flex; justify-content: space-around;" >
+  <div>
+    <p><%= link_to 'Posts', user_path(user), method: 'get', class: "nav-link" %></p> 
+  </div>
+
+  <div>
+    <p><%= link_to 'About', about_user_path(user), method: 'get', class: "nav-link" %></p> 
+    <!-- has bio birthday fullname -->
+  </div>
+
+  <div>
+    <p><%= link_to 'Friends', friends_user_path(user), method: 'get', class: "nav-link" %></p> 
+    <!-- can delete friends -->
+  </div>
+
+  <div>
+    <p><%= link_to 'Edit(password to edit!!) ', edit_user_registration_path, method: 'get', class: "nav-link" %></p> 
+  </div>
+</div>
+
+<br>

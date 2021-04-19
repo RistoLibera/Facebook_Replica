@@ -1,7 +1,7 @@
 
 <% user.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
   <!-- Could only send one request per user --> 
-  <% if Request.all.all? { |request| request.user_id != user.id } %>
+  <% unless Request.all.any? { |request| request.friend_id == user.id || request.user_id == user.id } %>
     <div style = "display: flex;" >
       <div>
         <%= link_to "Profile", user_path(user) %>

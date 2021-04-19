@@ -32,14 +32,15 @@ class RequestsController < ApplicationController
       @request.destroy
       @opposite_request.destroy
       flash[:notice] = "friendship is terminated!"
+      redirect_to friends_user_path(current_user.id)
       # notif
     elsif @opposite_request.destroy
       flash[:notice] = "request is rejected!"
+      redirect_to "/users"
       # notif
     else
       flash[:alert] = "Error!"
     end
-    redirect_to "/users"
   end
 
   private

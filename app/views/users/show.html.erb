@@ -1,38 +1,18 @@
-<h1>Users#show</h1>
-<div style = "display: flex; justify-content: space-around;" >
+<!-- Default show user's posts-->
 
-  <p>Icon</p>
-  <p>Coverphoto</p>
-</div><br>
+<!-- user;s profile -->
+<%= render partial: "user_bar", locals: { user: @user } %>   
 
-<div style = "display: flex; justify-content: center;" >
-  <p><%= @user.fullname%></p>
+<div>
+
+  <% if @user.posts.any?  %>
+    <%= render partial: "posts/all_posts", locals: { post: @user.posts } %>    
+  <% else %>
+    <p>This is a lonely universe</p>
+  <% end %>
+
+
 </div>
 
-<div style = "display: flex; justify-content: center;" >
-  <p>Personal sign</p>
-</div>
-
-<div style = "display: flex; justify-content: space-around;" >
-  <div>
-    <p>Post</p> 
-  </div>
-
-  <div>
-    <p>About</p> 
-    <!-- has bio birthday fullname -->
-  </div>
-
-  <div>
-    <p>Friend</p> 
-    <!-- can delete friends -->
-  </div>
-
-  <div>
-    <p>Edit Profile</p> 
-  </div>
-</div>
-
-<br>
-
+          
 

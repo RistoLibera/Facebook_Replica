@@ -14,6 +14,15 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
+  def about
+    @user = User.find(params[:id])
+  end
+
+  def friends
+    @user = User.find(params[:id])
+  end
+
+
   private
 
   def user_params

@@ -2,8 +2,14 @@
 <% Request.all.where.not(user_id: current_user.id).each do |request| %>
   <% unless current_user.friends.any? { |friend| friend.id == request.user_id } %>
     <div>
+      <div>
+        <%= link_to "Profile", user_path(request.user_id) %>
+      </div>
+
+      <div>
       <p><%= link_to "Accept", requests_path(friend_id: request.user_id), method: :post %> </p>
       <p><%= link_to "Reject", request_path(request,friend_id: request.user_id), method: :delete %> </p>
+      </div>
     </div>
   <% end %>
 <% end %>
