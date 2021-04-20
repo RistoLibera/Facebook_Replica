@@ -13,9 +13,11 @@ class RequestsController < ApplicationController
     
     if @request.save && created_relation?(params[:friend_id], current_user.id)
       # notif
+      send_accepted_notification(params[:friend_id])
       flash[:notice] = "Request is accepted!"
     elsif @request.save
       # notif
+      send_sent_notification(params[:friend_id])
       flash[:notice] = "Request is sent!"
     else
       flash[:alert] = "Error!"
@@ -31,13 +33,15 @@ class RequestsController < ApplicationController
     if created_relation?(params[:friend_id], current_user.id)
       @request.destroy
       @opposite_request.destroy
+      # notif
+      send_terminated_notification(@request.friend_id)
       flash[:notice] = "friendship is terminated!"
       redirect_to friends_user_path(current_user.id)
-      # notif
     elsif @opposite_request.destroy
+      # notif
+      send_rejected_notification(@request.friend_id)
       flash[:notice] = "request is rejected!"
       redirect_to "/users"
-      # notif
     else
       flash[:alert] = "Error!"
     end
@@ -50,4 +54,39 @@ class RequestsController < ApplicationController
       request.friend_id == current_id
     end
   end
+
+  # Notif
+  def send_accepted_notification(friend_id)
+    @user = User.find_by(id: friend_id)
+    @notif = @user.notifications.build(message: "accepted your post.", 
+                                      url: posts_url, 
+                                      sender_id: current_user.id)
+    @notif.save
+  end
+
+  def send_sent_notification(friend_id)
+    @user = User.find_by(id: friend_id)
+    @notif = @user.notifications.build(message: "sent you a friend request.", 
+                                      url: posts_url, 
+                                      sender_id: current_user.id)
+    @notif.save
+  end
+  
+  def send_terminated_notification(friend_id)
+    @user = User.find_by(id: friend_id)
+    @notif = @user.notifications.build(message: "had terminated the friendship.", 
+                                      url: posts_url, 
+                                      sender_id: current_user.id)
+    @notif.save
+  end
+  
+  def send_rejected_notification(friend_id)
+    @user = User.find_by(id: friend_id)
+    @notif = @user.notifications.build(message: "rejected your request.", 
+                                      url: posts_url, 
+                                      sender_id: current_user.id)
+    @notif.save
+  end
+
+
 end

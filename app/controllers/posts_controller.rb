@@ -15,6 +15,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = "Post is created!"
+      # Send to friends
+      send_post_notification(@post)
       redirect_to posts_path
     else
       flash[:alert] = "Error! Post is not created!"
@@ -59,5 +61,15 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def send_post_notification(post)
+    @friends = current_user.friends.all
+    @friends.each do |friend|
+      @notif = friend.notifications.build(message: "created a new post.", 
+                                          url: posts_url, 
+                                          sender_id: current_user.id)
+      @notif.save                                    
+    end
   end
 end

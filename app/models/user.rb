@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_many :likings, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :friends, through: :requests, class_name: "User"
-
+  has_many :notifications, dependent: :destroy
+  
   validates :firstname, :lastname, :birthday, :gender, presence: true
 
   def fullname
