@@ -22,6 +22,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def clear
+    # Clear notification
+    @user = User.find(params[:id])
+    @user.notifications.each { |notif| notif.seen! } if @user.notifications.any?
+    redirect_back fallback_location: posts_path
+  end
+
 
   private
 

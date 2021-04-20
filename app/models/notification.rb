@@ -1,6 +1,7 @@
 class Notification < ApplicationRecord
-  # scope :recent, -> { order(created_at: :desc) }
-  # scope :recent, -> { order(created_at: :desc) }
+
+  scope :recent, -> { order(created_at: :desc) }
+  scope :unseen, -> { where(status: :unseen) }
 
   enum status: [ :seen, :unseen ]
   belongs_to :user

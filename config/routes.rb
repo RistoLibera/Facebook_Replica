@@ -10,6 +10,7 @@ resources :users, only: [:index, :show, :edit, :update, :destroy] do
   member do
     get "friends", to: "users#friends"
     get "about", to: "users#about"
+    get "clear", to: "users#clear"
   end
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
