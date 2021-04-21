@@ -1,0 +1,13 @@
+<div style = "display: flex; justify-content: space-around;" >
+
+
+  <div>
+    <h1>Posts</h1>
+    <%= render partial: "posts/all_posts", locals: { posts: @posts } %>    
+  </div>
+
+  <div>
+    <h1>People</h1>
+    <%# <%= render partial: "users/all_users", locals: { users: @user } %>     %>
+  </div>
+</div>

@@ -1,8 +1,8 @@
     
-<div style = "display: flex; justify-content:space-between; " >
+<div style = "display: flex; justify-content:space-between;" >
   <div>
-    <%= link_to 'Icon ', posts_path, method: 'get', class: "nav-link" %>
-    <%= link_to 'Search ', posts_path, method: 'get', class: "nav-link" %>
+    <div><%= link_to 'Icon ', posts_path, method: 'get', class: "nav-link" %></div>
+    <div><%= render template: "searchings/new.html" %></div>
   </div>
 
   <div>
@@ -11,7 +11,7 @@
     <%= link_to 'Groups ', posts_path, method: 'get', class: "nav-link" %>
   </div>
 
-  <div style = "display: flex; justify-content:space-between; " >
+  <div style = "display: flex; justify-content:space-between;" >
     <div>
       <%= render partial: "notifications/all_notifications" %>
     </div>

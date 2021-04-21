@@ -10,11 +10,7 @@
   <div>
     <%= render partial: "new_post" %><br>
     <h1>Post#index</h1>
-    <% if @post.any?  %>
-      <%= render partial: "all_posts", locals: { post: @post } %>    
-    <% else %>
-      <p>This is a lonely universe</p>
-    <% end %>
+    <%= render partial: "all_posts", locals: { posts: @post } %>    
   </div>
 </div>
 

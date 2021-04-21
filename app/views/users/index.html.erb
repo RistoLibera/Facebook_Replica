@@ -10,12 +10,7 @@
 
     <!-- Other User -->
     <div>
-    <% if @user.any? %>
-      <%= render partial: "all_users", locals: { user: @user } %>    
-    <% else %>
-      <p>No one</p>
-    <% end %>
-
+      <%= render partial: "all_users", locals: { users: @user } %>    
     </div>
     
   </div>

@@ -15,6 +15,7 @@ resources :users, only: [:index, :show, :edit, :update, :destroy] do
     get "clear", to: "users#clear"
   end
 end
+resources :searchings
 
 
 end
