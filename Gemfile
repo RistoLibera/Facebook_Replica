@@ -58,8 +58,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 # Faker
 gem 'faker'
 
+# Facebook Omniauth
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
