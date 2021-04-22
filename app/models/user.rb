@@ -25,12 +25,12 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
 
+  # Facebook-Omniauth; email is not returned while being api creator.
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.firstname = auth.info.first_name
-      user.lastname = auth.info.last_name
+      user.lastname = auth.info.name
       # user.image = auth.info.image 
     end
   end
@@ -38,8 +38,7 @@ class User < ApplicationRecord
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.firstname = data["first_name"] if user.firstname.blank?
-        user.lastname = data["last_name"] if user.lastname.blank?
+        user.lastname = data["name"] if user.lastname.blank?
         user.email = data["email"] if user.email.blank?
       end
     end
