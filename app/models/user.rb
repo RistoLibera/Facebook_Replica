@@ -14,9 +14,13 @@ class User < ApplicationRecord
 
   validates :firstname, :lastname, :birthday, :gender, presence: true
 
+  after_create :send_welcome_email
+
   def fullname
     [firstname, lastname].join(' ')
   end
-
-
+  
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver_now
+  end
 end
