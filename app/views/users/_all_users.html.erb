@@ -1,5 +1,5 @@
 
-<% if users.any? %>
+<% unless users.nil? %>
   <% users.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
     <!-- Could only send one request per user --> 
     <% unless Request.all.any? { |request| request.friend_id == user.id || request.user_id == user.id } %>

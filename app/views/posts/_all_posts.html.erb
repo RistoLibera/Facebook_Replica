@@ -1,5 +1,5 @@
 
-<% if posts.any?  %>
+<% unless posts.nil?  %>
   <% posts.order("created_at DESC").each do |post| %>
     <div style = "outline: 2px solid black;" >
       <!-- User icon; edit or delete post -->

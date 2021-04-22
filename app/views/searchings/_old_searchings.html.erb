@@ -1,0 +1,21 @@
+<!-- old searchings -->
+<% old_searchings = current_user.searchings.order("created_at DESC").limit(5) %>
+
+<% if old_searchings.any? %>
+  <% old_searchings.each do |searching| %>
+    <%= form_with model: Searching.new do |f| %>
+      <%= f.hidden_field :word, value: searching.word %>
+      <div>
+        <button>
+          <%= f.hidden_field :commit %>
+          <%= searching.word %>
+        </button>
+        <%= link_to searching_path(searching), method: :delete, data: { confirm: "Delete?" } do %>
+          <span>X</span>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% else%>
+  <p>No old searchings</p>
+<% end %>

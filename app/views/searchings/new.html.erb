@@ -1,8 +1,8 @@
-<% content_for(:title, "Search") %>
 <div>
   <%= form_with model: Searching.new do |f| %>
     <%= f.text_field :word, placeholder: "Search something!", required: true  %>
     <%= f.submit %>
   <% end %>
 </div>
-<%# button %>
+
+
