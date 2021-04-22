@@ -66,3 +66,6 @@ gem 'faker'
 # Facebook Omniauth
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
+
+# Store secret key locally
+gem "figaro"
