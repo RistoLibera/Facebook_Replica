@@ -1,6 +1,10 @@
-<% if user.cover_image.any? %>
-
-
-<% else %>
-  <p>No Cover</p>
+<%= form_with model: user do |f| %>
+  <div>
+    <label>Add Cover Image
+      <span>
+        <%= f.file_field :cover_image, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()" %>
+      </span>
+    </label>
+  </div>
 <% end %>
+

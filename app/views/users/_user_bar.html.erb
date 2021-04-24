@@ -1,6 +1,13 @@
 <div style = "display: flex; justify-content: space-around;" >
-  <%= render partial: "cover_image", locals: { user: @user } %>   
-  <%= render partial: "avatar_image", locals: { user: @user } %>   
+  <% if @user.id == current_user.id %>
+    <%= image_tag cover_for(@user), size: "700x100" %>
+    <%= render partial: "cover_image", locals: { user: @user } %>  
+    <%= image_tag avatar_for(@user), size: "170x170" %> 
+    <%= render partial: "avatar_image", locals: { user: @user } %>  
+  <% else %>
+    <%= image_tag cover_for(@user), size: "700x100" %>
+    <%= image_tag avatar_for(@user), size: "170x170" %> 
+  <% end %> 
 </div><br>
 
 <div style = "display: flex; justify-content: center;" >

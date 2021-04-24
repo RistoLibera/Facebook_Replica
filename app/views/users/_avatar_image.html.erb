@@ -1,7 +1,9 @@
-
-<% if user.avatar.any? %>
-
-
-<% else %>
-  <p>No avatar</p>
+<%= form_with model: user do |f| %>
+  <div>
+    <label>Add Avatar Image
+      <span>
+        <%= f.file_field :avatar, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()" %>
+      </span>
+    </label>
+  </div>
 <% end %>
