@@ -69,3 +69,10 @@ gem 'omniauth-rails_csrf_protection'
 
 # Store secret key locally
 gem "figaro"
+
+# Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3).
+gem 'aws-sdk-s3'
+
+# Use ActiveStorage variant to customize image
+gem 'image_processing'
+

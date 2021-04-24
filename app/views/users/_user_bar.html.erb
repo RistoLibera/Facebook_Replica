@@ -1,10 +1,10 @@
 <div style = "display: flex; justify-content: space-around;" >
-  <p>Icon</p>
-  <p>Coverphoto</p>
+  <%= render partial: "cover_image", locals: { user: @user } %>   
+  <%= render partial: "avatar_image", locals: { user: @user } %>   
 </div><br>
 
 <div style = "display: flex; justify-content: center;" >
-  <p><%= @user.fullname%></p>
+  <p><%= user.fullname%></p>
 </div>
 
 <div style = "display: flex; justify-content: center;" >
