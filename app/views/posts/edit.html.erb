@@ -1,7 +1,15 @@
 <% content_for(:title, "Edit") %>
 <div>
   <%= form_with model: @post do |f| %>
-    <%= f.text_area :body, placeholder: "Write something!", size: "70x5" %>
+    <div>
+      <%= f.text_area :body, placeholder: "Write something!", size: "70x5" %>
+      <% if @post.images.attached? %>
+        <% @post.images.each do |image| %>
+          <%= image_tag image, size: "350x350" %>
+          <%= link_to "Delete", delete_attachment_post_url(image_id: image.id)%>
+        <% end %>
+      <% end %>
+    </div>
     <div>
       <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/jpeg, image/png'  %>
       <%= f.submit %>

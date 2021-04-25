@@ -29,7 +29,6 @@ class PostsController < ApplicationController
   def edit
     # @post = Post.find(params[:id])
     # Need to update new images
-    @post.images.purge
   end
 
   def update
@@ -50,6 +49,12 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "Post is deleted!"
     redirect_to posts_path
+  end
+
+  def delete_attachment
+    @image = ActiveStorage::Attachment.find(params[:image_id])
+    @image.purge
+    redirect_back(fallback_location: posts_path)
   end
 
 

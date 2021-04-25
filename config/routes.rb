@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    member do
+      get "delete_attachment"
+    end
+  end
   resources :comments, only: [:new, :create, :edit, :update, :destroy] 
   resources :likings, only: [:new, :create, :destroy]
   resources :requests, only: [:index, :create, :destroy]
