@@ -1,24 +1,38 @@
-# README
+# Project: Facebook_Replica
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is this for
 
-Things you may want to cover:
+  This is a simple replica of Facebook, within which has a set of basic functions to
+  prove my understanding of Ruby on Rails.
 
-* Ruby version
 
-* System dependencies
+## What does this has
 
-* Configuration
+  This has the following functions:
 
-* Database creation
+## As User
 
-* Database initialization
+  -You can create user by firstname, lastname, birthday and gender.
+  -You can edit your password.
+  -You can upload images to profile and icon.
+  -You can add friends or delete friends.
+  -You can search for what you like.
 
-* How to run the test suite
+## For Post
 
-* Services (job queues, cache servers, search engines, etc.)
+  -You can create, edit, delete your own posts.
+  -You can upload images to posts.
+  -You can like or unlike posts.
+  -You can comment on any posts.
+  -You can see when the posts were created.
 
-* Deployment instructions
+## Via Facebook
 
-* ...
+  -You can link to Facebook to create a new account.
+  -You will see the name and email is autofilled.
+
+
+
+
+
+
