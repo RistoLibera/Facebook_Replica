@@ -1,17 +1,14 @@
 <!-- Default show user's posts-->
 <% content_for(:title, "Profile") %>
-<!-- user;s profile -->
+<!-- user profile -->
 <%= render partial: "user_bar", locals: { user: @user } %>   
 
 <div>
-
   <% if @user.posts.any?  %>
     <%= render partial: "posts/all_posts", locals: { posts: @user.posts } %>    
   <% else %>
     <p>This is a lonely universe</p>
   <% end %>
-
-
 </div>
 
           

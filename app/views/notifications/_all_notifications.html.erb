@@ -1,14 +1,12 @@
-
-    <!-- Should have floating icon -->
-
-  <div class="dropdown">
-    <button class="dropbtn">Notif</button>
-    <div class="dropdown-content" >
-      <p><%= link_to 'Clear all', clear_user_path(current_user), method: 'get', class: "nav-link" %></p> 
-      <% if current_user.notifications.any? %>
-        <% current_user.notifications.unseen.recent.each do |notif| %>
-          <p><%= notif.sender_id.to_s + " " + notif.message %>
-        <% end %>
+<!-- Should have floating icon -->
+<div class="dropdown">
+  <button class="dropbtn">Notif</button>
+  <div class="dropdown-content" >
+    <p><%= link_to 'Clear all', clear_user_path(current_user), method: 'get', class: "nav-link" %></p> 
+    <% if current_user.notifications.any? %>
+      <% current_user.notifications.unseen.recent.each do |notif| %>
+        <p><%= notif.sender_id.to_s + " " + notif.message %>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>

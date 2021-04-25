@@ -35,12 +35,9 @@ class UsersController < ApplicationController
     redirect_back fallback_location: posts_path
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:avatar, :cover_image)
   end
-
-
 end

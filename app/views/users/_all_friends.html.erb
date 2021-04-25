@@ -1,6 +1,4 @@
-
 <% friends.each do |friend|%>
-
     <div style = "display: flex;justify-content: space-around; " >
       <div>
         <!-- cound look profile -->
@@ -12,6 +10,5 @@
         <p><%= link_to "Remove", request_path(Request.find_by(friend_id: friend.id),friend_id: friend.id), method: :delete %> </p>
       </div>
     </div>
-
 <% end %>
 

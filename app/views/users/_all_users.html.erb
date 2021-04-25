@@ -1,4 +1,3 @@
-
 <% unless users.nil? %>
   <% users.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
     <!-- Could only send one request per user --> 

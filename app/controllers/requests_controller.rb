@@ -86,6 +86,4 @@ class RequestsController < ApplicationController
                                       sender_id: current_user.id)
     @notif.save
   end
-
-
 end

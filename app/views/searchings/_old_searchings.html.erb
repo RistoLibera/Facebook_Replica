@@ -1,6 +1,5 @@
 <!-- old searchings -->
 <% old_searchings = current_user.searchings.order("created_at DESC").limit(5) %>
-
 <% if old_searchings.any? %>
   <% old_searchings.each do |searching| %>
     <%= form_with model: Searching.new do |f| %>

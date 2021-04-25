@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Devise basic setting
   def configure_permitted_parameters
     update_attrs = [:firstname, :lastname, :birthday, :gender]
     devise_parameter_sanitizer.permit(:sign_up, keys: update_attrs)

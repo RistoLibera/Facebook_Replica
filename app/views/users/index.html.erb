@@ -1,22 +1,17 @@
 <!-- Actually this is friend request page -->
 <% content_for(:title, "Requests") %>
 <div style = "display: flex; justify-content: space-around;" >
-
   <div>
     <!-- Friend request -->
     <div>
       <%= render partial: "requests/all_requests", locals: { users: @user } %>
     </div>
-
     <!-- Other User -->
     <div>
       <%= render partial: "all_users", locals: { users: @user } %>    
     </div>
-    
   </div>
-
   <div>
     <p>show profile</p>
   </div>
-
 </div>

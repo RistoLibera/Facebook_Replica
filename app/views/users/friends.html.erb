@@ -1,10 +1,8 @@
 <% content_for(:title, "Profile") %>
-
-
-<%= render partial: "user_bar", locals: { user: @user } %>   
-
-  <% if @user.friends.any?  %>
-    <%= render partial: "users/all_friends", locals: { friends: @user.friends } %>    
-  <% else %>
-    <p>This is a lonely universe</p>
-  <% end %>
+<%= render partial: "user_bar", locals: { user: @user } %> 
+  
+<% if @user.friends.any?  %>
+  <%= render partial: "users/all_friends", locals: { friends: @user.friends } %>    
+<% else %>
+  <p>This is a lonely universe</p>
+<% end %>

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # User image
   def avatar_for(user)
     if user.avatar.attached?
       user.avatar

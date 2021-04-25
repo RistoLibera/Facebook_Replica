@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @comment.update(comment_params)
     if @comment.save
       flash[:notice] = "Comment is updated!"
-      redirect_to post_path(@comment.post_id)
+      redirect_to posts_path
     else
       flash[:alert] = "Error! Comment is not updated!"
       render :edit
