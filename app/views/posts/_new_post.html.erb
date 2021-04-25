@@ -1,6 +1,9 @@
 <div>
   <%= form_with model: Post.new do |f| %>
     <%= f.text_area :body, placeholder: "Write something!", size: "70x5" %>
-    <%= f.submit %>
+    <div>
+      <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/jpeg, image/png'  %>
+      <%= f.submit %>
+    </div>
   <% end %>
 </div>

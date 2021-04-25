@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :friends, through: :requests, class_name: "User"
   has_many :notifications, dependent: :destroy
   has_many :searchings, dependent: :destroy
+  # Using Amazon Server
   has_one_attached :avatar, dependent: :purge_later
   has_one_attached :cover_image, dependent: :purge_later
 

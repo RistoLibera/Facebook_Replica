@@ -16,11 +16,10 @@ class PostsController < ApplicationController
       flash[:notice] = "Post is created!"
       # Send to friends
       send_post_notification(@post)
-      redirect_to posts_path
     else
       flash[:alert] = "Error! Post is not created!"
-      render :new
     end
+    redirect_to posts_path
   end
 
   def show
@@ -29,6 +28,8 @@ class PostsController < ApplicationController
 
   def edit
     # @post = Post.find(params[:id])
+    # Need to update new images
+    @post.images.purge
   end
 
   def update
@@ -55,7 +56,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:user_id, :body)
+    params.require(:post).permit(:user_id, :body, images: [])
   end
 
   def set_post

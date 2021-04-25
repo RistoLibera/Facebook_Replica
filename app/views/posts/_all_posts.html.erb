@@ -3,8 +3,9 @@
   <% posts.order("created_at DESC").each do |post| %>
     <div style = "outline: 2px solid black;" >
       <!-- User icon; edit or delete post -->
-      <div>
+      <div style = "display: flex; justify-content: space-around;" >
         <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
+        <p>Time: <%= time_ago_in_words(post.created_at) %></p>
         <% if post.user_id == current_user.id %>
           <div class="dropdown">
             <button class="dropbtn">...</button>
@@ -15,11 +16,15 @@
           </div>
         <% end %>
       </div>
-      <!-- Post body, created time -->
+      <!-- Post body and images created time -->
       <div style = "display: flex; justify-content: space-around;" >
         <p>Body: <%= post.body %></p>
-        <p>Time: <%= time_ago_in_words(post.created_at) %></p>
       </div>
+      <% if post.images.attached? %>
+        <% post.images.each do |image| %>
+          <%= link_to image_tag(image, size: "350x350"), image %>
+        <% end %>
+      <% end %>
 
       <!-- likings; comments -->
       <div style = "display: flex; justify-content: space-around;" >
