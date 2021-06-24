@@ -76,3 +76,5 @@ gem 'aws-sdk-s3'
 # Use ActiveStorage variant to customize image
 gem 'image_processing'
 
+# CSS Framework
+gem 'bootstrap', '~> 5.0', '>= 5.0.1'

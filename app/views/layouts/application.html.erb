@@ -12,13 +12,13 @@
   </head>
 
   <body>
-    <% flash.each do |type, msg| %>
-      <div class="error-message text-center">
-        <%= msg %>
-      </div>
-    <% end %>
-
     <% if user_signed_in? %>
+      <% flash.each do |type, msg| %>
+        <div class="error-message text-center block">
+          <%= msg %>
+        </div>
+      <% end %>
+      
       <%= render "layouts/navbar" %>
     <% end %>
 
