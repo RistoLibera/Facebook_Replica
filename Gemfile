@@ -60,7 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Devise
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
-# Faker
+# Fake initial members
 gem 'faker'
 
 # Facebook Omniauth
@@ -77,4 +77,4 @@ gem 'aws-sdk-s3'
 gem 'image_processing'
 
 # CSS Framework
-gem 'bootstrap', '~> 5.0', '>= 5.0.1'
+gem 'bulma-rails', '~> 0.9.1'
