@@ -46,4 +46,11 @@ class User < ApplicationRecord
       end
     end
   end
+
+  # Auto remember-me
+  class User
+    def remember_me
+      (super == nil) ? true : super
+    end
+  end 
 end
