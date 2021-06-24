@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 // Bulma Customization
 $spacing-values: (
   "0": 0,
@@ -13,9 +15,15 @@ $spacing-values: (
   "10": 7rem,
 );
 
+$input-placeholder-color: #90949c;
+
 // Bulma Framework
 @import "bulma";
 
+// General rules
+.a[display^="inline-block"]{
+  width: 100%;
+}
 //  dropdown button
 .dropbtn {
   color:black;
