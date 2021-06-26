@@ -55,4 +55,5 @@ $input-placeholder-color: #90949c;
 
 .dropdown:hover .dropdown-content {display: block;}
  
-
+// Remove pesky field_with_error wrapper
+// .field_with_errors { display: inline; }
