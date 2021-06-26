@@ -58,7 +58,7 @@ class RequestsController < ApplicationController
   def send_accepted_notification(friend_id)
     @user = User.find_by(id: friend_id)
     @notif = @user.notifications.build(message: "accepted your post.", 
-                                      url: posts_url, 
+                                      url: users_url, 
                                       sender_id: current_user.id)
     @notif.save
   end
@@ -66,7 +66,7 @@ class RequestsController < ApplicationController
   def send_sent_notification(friend_id)
     @user = User.find_by(id: friend_id)
     @notif = @user.notifications.build(message: "sent you a friend request.", 
-                                      url: posts_url, 
+                                      url: users_url, 
                                       sender_id: current_user.id)
     @notif.save
   end
@@ -74,7 +74,7 @@ class RequestsController < ApplicationController
   def send_terminated_notification(friend_id)
     @user = User.find_by(id: friend_id)
     @notif = @user.notifications.build(message: "had terminated the friendship.", 
-                                      url: posts_url, 
+                                      url: users_url, 
                                       sender_id: current_user.id)
     @notif.save
   end
@@ -82,7 +82,7 @@ class RequestsController < ApplicationController
   def send_rejected_notification(friend_id)
     @user = User.find_by(id: friend_id)
     @notif = @user.notifications.build(message: "rejected your request.", 
-                                      url: posts_url, 
+                                      url: users_url, 
                                       sender_id: current_user.id)
     @notif.save
   end

@@ -44,7 +44,7 @@ Request.create!(
 Notification.create!(
   user: User.find_by(firstname: 'Left'),
   message: "sent you a friend request.", 
-  url: "/posts/", 
+  url: "/users/", 
   sender_id: User.second.id
 )
 

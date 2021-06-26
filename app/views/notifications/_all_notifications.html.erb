@@ -5,7 +5,9 @@
     <p><%= link_to 'Clear all', clear_user_path(current_user), method: 'get', class: "nav-link" %></p> 
     <% if current_user.notifications.any? %>
       <% current_user.notifications.unseen.recent.each do |notif| %>
-        <p><%= notif.sender_id.to_s + " " + notif.message %>
+        <%= link_to notif.url do %>
+          <p><%= notif.sender_id.to_s + " " + notif.message %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>

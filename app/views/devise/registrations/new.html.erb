@@ -1,56 +1,79 @@
 <% content_for(:title, "Register") %>
 
-<h2>Sign up</h2>
+<div class="container is-widescreen">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <h2>Sign up</h2>
+  <p>It’s quick and easy.</p>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true %>
+  <div>
+    <%= link_to 'back-icon', "/users/sign_in" %>
   </div>
 
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :firstname %><br />
+      <%= f.text_field :firstname, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :lastname %><br />
+      <%= f.text_field :lastname %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_field :birthday %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.label "Male" %>
-    <%= f.radio_button :gender, "Male" %>
-    <%= f.label "Female" %>
-    <%= f.radio_button :gender, "Female" %>
-    <%= f.label "Non" %>
-    <%= f.radio_button :gender, "Non" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :birthday %><br />
+      <%= f.date_select :birthday, start_year: Date.current.year, end_year: 1900 %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="field">
+      <%= f.label :gender %><br />
+      <%= f.label "Male" %>
+      <%= f.radio_button :gender, "Male" %>
+      <%= f.label "Female" %>
+      <%= f.radio_button :gender, "Female" %>
+      <%= f.label "Non" %>
+      <%= f.radio_button :gender, "Non" %>
+    </div>
+
+    <div>
+      <p>
+        By clicking Sign Up, you agree to our Terms, 
+        Data Policy and Cookies Policy. 
+        You may receive SMS Notifications from us and can opt out any time.
+      </p>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+
+
+
+
+
+
+</div>
+
+
+
