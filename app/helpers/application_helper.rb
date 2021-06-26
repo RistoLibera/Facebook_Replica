@@ -4,7 +4,7 @@ module ApplicationHelper
     if user.avatar.attached?
       user.avatar
     else
-      "male_default.png"
+      "default.svg"
     end
   end
 
@@ -12,7 +12,7 @@ module ApplicationHelper
     if user.cover_image.attached?
       user.cover_image
     else
-      "male_default.png"
+      "default.svg"
     end
   end
 end

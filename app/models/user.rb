@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likings, dependent: :destroy
   has_many :requests, dependent: :destroy
-  has_many :friends, through: :requests, class_name: "User"
+  has_many :friends, through: :requests, class_name: "::User"
   has_many :notifications, dependent: :destroy
   has_many :searchings, dependent: :destroy
   # Using Amazon Server
@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   validates :firstname, :lastname, :birthday, :gender, presence: true
 
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   def fullname
     [firstname, lastname].join(' ')
