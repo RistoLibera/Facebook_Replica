@@ -30,8 +30,8 @@
 - You will see the name and email is autofilled.
 
 ### Test Account
-- email: 123456@123456.com
-- password: 123456
+- Email: 123456@123456.com
+- Password: 123456
 
 
 
