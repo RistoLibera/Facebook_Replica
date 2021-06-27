@@ -1,16 +1,27 @@
-<h2>Forgot your password?</h2>
+<% content_for(:title, "Password") %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container is-widescreen mt-7 is-flex is-flex-direction-column is-align-items-center">
+  <div class="is-flex is-flex-direction-column is-align-items-center p-3 facebook-box-variation" style="width: 500px;">
+    <div class="is-flex is-flex-direction-column" style="width:100%;">
+      <h2 class="has-text-left is-size-4 has-text-weight-semibold mb-5">Find Your Account</h2>
+      <p class="is-size-6 mb-3">Please enter your email to receive password reset instructions.</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, style: "width: 100%;" }) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "input is-large",style: 'width: 100%;' %>
+      </div>
+
+      <div class="field is-flex is-justify-content-end">
+        <%= link_to "/users/sign_in" do %>
+          <button class="button is-white">Cancel</button>
+        <% end %>
+        <%= f.submit "Send", class: 'button is-link  is-normal' %>
+      </div>
+    <% end %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>

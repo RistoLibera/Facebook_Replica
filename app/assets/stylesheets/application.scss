@@ -24,6 +24,11 @@ $input-placeholder-color: #90949c;
 .a[display^="inline-block"]{
   width: 100%;
 }
+
+.facebook-box-variation {
+  border-radius: 10px; 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .1), 8px 8px 16px rgba(0, 0, 0, .1),-2px 2px 4px rgba(0, 0, 0, .1), -8px 8px 16px rgba(0, 0, 0, .1);
+}
 //  dropdown button
 .dropbtn {
   color:black;
