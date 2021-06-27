@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       get "friends", to: "users#friends"
       get "about", to: "users#about"
+      get "nothing", to: "users#nothing"
       # Clear notif
       get "clear", to: "users#clear"
     end

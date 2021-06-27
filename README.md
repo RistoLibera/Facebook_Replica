@@ -29,7 +29,9 @@
 - You can link to Facebook to create a new account.
 - You will see the name and email is autofilled.
 
-
+### Test Account
+- email: 123456@123456.com
+- password: 123456
 
 
 

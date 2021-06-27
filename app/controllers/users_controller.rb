@@ -28,6 +28,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def nothing
+    @user = User.find(params[:id])
+  end
+
   def clear
     # Clear notification
     @user = User.find(params[:id])
