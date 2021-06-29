@@ -26,9 +26,9 @@
     </div>
     <div class="pr-2">
       <%= link_to user_path(current_user), method: 'get', class: "nav-link" do %>
-          <button class="button hovering" style="height: 52px;">
-          <%= image_tag avatar_for(current_user), size: "30x30" %>
-        </button>
+        <figure class="image is-32x32">
+          <%= image_tag avatar_for(current_user), class: 'is-rounded mt-2'%>
+        </figure>
       <% end %>
     </div>
     <div class="pr-2">
