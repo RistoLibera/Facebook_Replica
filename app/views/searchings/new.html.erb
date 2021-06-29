@@ -1,7 +1,10 @@
-<div>
-  <%= form_with model: Searching.new do |f| %>
-    <%= f.text_field :word, placeholder: "Search something!", required: true  %>
-    <%= f.submit %>
+<div class="field">
+  <%= form_with(model: Searching.new, html: {class: "control has-icons-left",  style: "width:200px;"}) do |f| %>
+    <%= f.text_field :word, placeholder: "Search something!", required: true ,class: 'input is-small'%>
+    <span class="icon is-small is-left">
+      <i class="fa fa-search"></i>
+    </span>                 
+    <%= f.submit style: 'display:none;' %>
   <% end %>
 </div>
 
