@@ -21,14 +21,23 @@
   </div>
 
   <div class="is-flex is-justify-content-space-between">
-    <div>
+    <div class="pr-2">
       <%= render partial: "notifications/all_notifications" %>
     </div>
-    <div>
-      <%= link_to 'Profile ', user_path(current_user), method: 'get', class: "nav-link" %>
+    <div class="pr-2">
+      <%= link_to user_path(current_user), method: 'get', class: "nav-link" do %>
+          <button class="button hovering" style="height: 52px;">
+          <%= image_tag avatar_for(current_user), size: "30x30" %>
+        </button>
+      <% end %>
     </div>
-    <div>
-      <%= link_to ' Sign Out ', destroy_user_session_path, method: 'delete', class: "nav-link" %>
+    <div class="pr-2">
+      <%= link_to destroy_user_session_path, method: 'delete', class: "nav-link" do %>
+        <button class="button hovering" style="height: 52px; width: 52px;">
+          <i class="fa fa-lg fa-sign-out has-text-black-bis"></i>
+        </button>
+      <% end %>
     </div>
   </div>
 </div>
+
