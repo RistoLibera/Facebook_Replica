@@ -1,4 +1,3 @@
-
 <% unless posts.nil?  %>
   <% posts.order("created_at DESC").each do |post| %>
     <div style = "outline: 2px solid black;" >
@@ -6,15 +5,7 @@
       <div style = "display: flex; justify-content: space-around;" >
         <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
         <p>Time: <%= time_ago_in_words(post.created_at) %></p>
-        <% if post.user_id == current_user.id %>
-          <div class="dropdown">
-            <button class="dropbtn">...</button>
-            <div class="dropdown-content" >
-              <%= link_to "Edit", edit_post_path(post) %>
-              <%= link_to "Delete", post_path(post), method: :delete %>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "post_option", locals: { post: post } %>    
       </div>
       <!-- Post body and images created time -->
       <div style = "display: flex; justify-content: space-around;" >

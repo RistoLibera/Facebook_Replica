@@ -29,7 +29,43 @@
 - You can link to Facebook to create a new account.
 - You will see the name and email is autofilled.
 
+## Initial Setup
+
+### Getting start
+
+- Clone repository
+```ruby
+$ git clone git@github.com:RistoLibera/Facebook_Replica.git
+```
+
+- Install gems
+```ruby
+$ bundle install
+```
+
+- Intialize figaro
+```ruby
+$ bundle exec figaro install
+```
+
+- Migrate database
+```ruby
+$ rails db:migrate
+$ rails db:seed
+```
+
+- Create server
+```ruby
+$ rails server
+```
+
+- Browse content
+```ruby
+$ https://localhost:3000
+```
+
 ### Test Account
+
 - Email: 123456@123456.com
 - Password: 123456
 

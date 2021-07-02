@@ -53,3 +53,20 @@ Comment.create!(
   post: Post.third,
   content: 'This comment is written by a smart guinea pig.'
 )
+
+Post.create!(
+  user: User.find_by(firstname: 'Left'),
+  body: "You created this post, remember?"
+)
+
+Liking.create!(
+  user: User.second,
+  post: Post.fourth,
+)
+
+Notification.create!(
+  user: User.find_by(firstname: 'Left'),
+  message: "liked your post.", 
+  url: "/posts/", 
+  sender_id: User.second.id
+)
