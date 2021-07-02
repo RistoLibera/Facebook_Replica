@@ -71,6 +71,7 @@ $input-placeholder-color: #90949c;
 .hovering:hover {
   border-radius: 50%;
   background-color: #d3d3d3;
+  cursor: pointer;
 }
 
 // Anchor color
@@ -98,3 +99,38 @@ a { color: inherit; }
   vertical-align: -0.25em;
 }
 
+.sp_LzDGwd4CywS_third {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/vECmhfJIHRp.png);
+  background-size: 33px 895px;
+  background-repeat: no-repeat;
+  background-position: 0 -578px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.sp_LzDGwd4CywS_fourth {
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yM/r/G1bBKKO-Gik.png);
+  background-size: 501px 244px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-position: -25px -219px;
+  height: 24px;
+  width: 24px;
+}
+
+// Responsive css
+@media (max-width: 850px) {
+  .responsive-display {
+    display: none;
+  }
+}
+
+// Rails file_field customization
+.image-upload > input
+{
+  display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}

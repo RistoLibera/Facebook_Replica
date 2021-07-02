@@ -1,12 +1,21 @@
 <% content_for(:title, "Posts") %>
-<div class="is-flex is-justify-content-space-between">
-  <div>
+<div class="is-flex is-flex-direction-row mt-4">
+  <div class="ml-4 mt-2" style="max-width:360px;">
     <%= render partial: "event" %><br>
   </div>
-  <div>
+
+  <div class="mt-3">
     <%= render partial: "new_post" %><br>
     <h1>Post#index</h1>
     <%= render partial: "all_posts", locals: { posts: @post } %>    
+  </div>
+
+  <div class="ml-7 responsive-display" style="max-width:360px;">
+    <h1 class="is-size-5 has-text-weight-semibold">Group Conversations</h1>
+    <div class="is-flex is-flex-direction-row is-align-items-center mt-3">
+      <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_third hovering"></i>
+      <p class="ml-2 is-size-6">Create New Group</p>
+    </div>
   </div>
 </div>
 

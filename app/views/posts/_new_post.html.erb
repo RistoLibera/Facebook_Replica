@@ -1,9 +1,14 @@
 <div>
   <%= form_with model: Post.new do |f| %>
-    <%= f.text_area :body, placeholder: "Write something!", size: "70x5" %>
-    <div>
-      <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/jpeg, image/png'  %>
-      <%= f.submit %>
+    <%= f.text_area :body, placeholder: "Share a photo or write something.", size: "45x2", class: 'textarea' %>
+    <div class="is-flex is-flex-direction-row is-justify-content-space-around mt-1">
+      <div class="image-upload">
+        <label class="image-upload tag is-link is-large has-text-dark is-size-5" for="file-input" style="width:200px;">
+          Images
+        </label>
+        <%= f.file_field :images, multiple: true, accept: 'image/jpg, image/jpeg, image/png', id: 'file-input' %>
+      </div>
+      <%= f.submit "Create Post", class: 'button is-fullwidth is-info has-text-dark ', style: 'width:200px;' %>
     </div>
   <% end %>
 </div>
