@@ -4,5 +4,5 @@
 <% if @user.friends.any?  %>
   <%= render partial: "users/all_friends", locals: { friends: @user.friends } %>    
 <% else %>
-  <p>This is a lonely universe</p>
+  <p>No one?</p>
 <% end %>

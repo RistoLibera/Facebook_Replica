@@ -131,9 +131,14 @@ a { color: inherit; }
 
 // Responsive css
 @media (max-width: 850px) {
-  .responsive-display {
+  .responsive-disappear {
     display: none;
   }
+
+  .responsive-display {
+    margin: auto;
+  }
+
 }
 
 // Rails file_field customization
@@ -143,4 +148,9 @@ a { color: inherit; }
 }
 .image-upload > label{
   cursor:pointer;
+}
+
+// Input focus effect
+input:focus{
+  outline: none;
 }

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       redirect_to posts_path
     else
       flash[:alert] = "Error! Comment is not created!"
-      render :new
+      redirect_to posts_path
     end
   end
 

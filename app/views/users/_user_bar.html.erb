@@ -1,40 +1,43 @@
-<div style = "display: flex; justify-content: space-around;" >
-  <% if @user.id == current_user.id %>
-    <%= image_tag cover_for(@user), size: "700x100" %>
-    <%= render partial: "users/cover_image", locals: { user: @user } %>  
-    <%= image_tag avatar_for(@user), size: "170x170" %> 
-    <%= render partial: "users/avatar_image", locals: { user: @user } %>  
-  <% else %>
-    <%= image_tag cover_for(@user), size: "700x100" %>
-    <%= image_tag avatar_for(@user), size: "170x170" %> 
-  <% end %> 
-</div><br>
-
-<div style = "display: flex; justify-content: center;" >
-  <p><%= @user.fullname%></p>
-</div>
-
-<div style = "display: flex; justify-content: center;" >
-  <p>Personal sign</p>
-</div>
-
-<!-- user options  -->
-<div style = "display: flex; justify-content: space-around;" >
-  <div>
-    <p><%= link_to 'Posts', user_path(@user), method: 'get', class: "nav-link" %></p> 
-  </div>
-  <div>
-    <p><%= link_to 'About', about_user_path(@user), method: 'get', class: "nav-link" %></p> 
-  </div>
-  <div>
-    <p><%= link_to 'Friends', friends_user_path(@user), method: 'get', class: "nav-link" %></p> 
-  </div>
-  <div>
+<div class="">
+  <div style = "display: flex; justify-content: space-around;" >
     <% if @user.id == current_user.id %>
-      <p><%= link_to 'Bad Password?', edit_user_registration_path, method: 'get', class: "nav-link" %></p> 
+      <%= image_tag cover_for(@user), size: "700x100" %>
+      <%= render partial: "users/cover_image", locals: { user: @user } %>  
+      <%= image_tag avatar_for(@user), size: "170x170" %> 
+      <%= render partial: "users/avatar_image", locals: { user: @user } %>  
     <% else %>
-      <p><%= link_to 'Good Password!', nothing_user_path(@user), method: 'get', class: "nav-link" %></p> 
-    <% end %>
+      <%= image_tag cover_for(@user), size: "700x100" %>
+      <%= image_tag avatar_for(@user), size: "170x170" %> 
+    <% end %> 
+  </div><br>
+
+  <div style = "display: flex; justify-content: center;" >
+    <p><%= @user.fullname%></p>
   </div>
+
+  <div style = "display: flex; justify-content: center;" >
+    <p>Personal sign</p>
+  </div>
+
+  <!-- user options  -->
+  <div style = "display: flex; justify-content: space-around;" >
+    <div>
+      <p><%= link_to 'Posts', user_path(@user), method: 'get', class: "nav-link" %></p> 
+    </div>
+    <div>
+      <p><%= link_to 'About', about_user_path(@user), method: 'get', class: "nav-link" %></p> 
+    </div>
+    <div>
+      <p><%= link_to 'Friends', friends_user_path(@user), method: 'get', class: "nav-link" %></p> 
+    </div>
+    <div>
+      <% if @user.id == current_user.id %>
+        <p><%= link_to 'Bad Password?', edit_user_registration_path, method: 'get', class: "nav-link" %></p> 
+      <% else %>
+        <p><%= link_to 'Good Password!', nothing_user_path(@user), method: 'get', class: "nav-link" %></p> 
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
-<br>

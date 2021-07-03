@@ -1,7 +1,8 @@
-<div>
+<button class="button is-white is-fullwidth has-text-grey has-text-weight-medium">
+  <i class="fa fa-thumbs-up mr-1"></i>
   <% if has_liking?(post) %>
-    <%= link_to "unliking", liking_path(current_liking(post)), method: :delete %>
+    <%= link_to "Unlike", liking_path(current_liking(post)), method: :delete %>
   <% else %>
-    <%= link_to "new liking", likings_path(post_id: post.id), method: :post %>
+    <%= link_to "Like", likings_path(post_id: post.id), method: :post %>
   <% end %>
-</div>
+</button>

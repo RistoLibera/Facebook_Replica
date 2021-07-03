@@ -11,14 +11,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="has-navbar-fixed-top">
     <% if user_signed_in? %>
-      <% flash.each do |type, msg| %>
-        <div class="error-message text-center block">
-          <%= msg %>
+      <% if flash.any? %>
+        <div class="is-flex is-justify-content-center notification is-danger">
+          <ul class="is-flex is-flex-direction-row">
+            <% flash.each do |type, msg| %>
+              <li class="mr-3"><%= msg %></li>
+            <% end %>    
+          </ul>
         </div>
       <% end %>
-      
       <%= render "layouts/navbar" %>
     <% end %>
 
