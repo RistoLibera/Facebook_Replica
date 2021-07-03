@@ -5,7 +5,7 @@
       <div style = "display: flex; justify-content: space-around;" >
         <p>User_id: <%= link_to post.user_id, user_path(post.user_id) %></p>
         <p>Time: <%= time_ago_in_words(post.created_at) %></p>
-        <%= render partial: "post_option", locals: { post: post } %>    
+        <%= render partial: "posts/post_option", locals: { post: post } %>    
       </div>
       <!-- Post body and images created time -->
       <div style = "display: flex; justify-content: space-around;" >

@@ -1,10 +1,27 @@
-
 <% if post.user_id == current_user.id %>
-  <div class="dropdown">
-    <button class="dropbtn">...</button>
-    <div class="dropdown-content" >
-      <%= link_to "Edit", edit_post_path(post) %>
-      <%= link_to "Delete", post_path(post), method: :delete %>
+  <div class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <div class="is-flex is-justify-content-center is-align-items-center" style="width:36px; height:36px;">
+        <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_fifth"></i>
+      </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+      <div class="dropdown-content">
+        <a href="#" class="dropdown-item">
+          <%= link_to "Edit", edit_post_path(post) %>
+        </a>
+        <a href="#" class="dropdown-item">
+          <%= link_to "Delete", post_path(post), method: :delete %>
+        </a>
+      </div>
     </div>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
