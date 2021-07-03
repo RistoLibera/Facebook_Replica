@@ -1,20 +1,27 @@
 <% if post.comments.any? %>
   <% post.comments.order("created_at DESC").each do |comment| %>
-    <div>
-      <figure class="image is-32x32 mr-2">
-        <%= image_tag avatar_for(User.find_by(id: comment.user_id)), class: 'is-rounded'%>
-      </figure>
-      <p><%= User.find_by(id: comment.user_id).fullname %></p>
-      <p><%= comment.content %></p>
-    </div>
-
-    <div>
-      <p><%= time_ago_in_words(comment.created_at) %></p><br>
-      <div>
-        <% if comment.user_id == current_user.id %>
-          <%= link_to "Edit", edit_comment_path(comment) %>
-          <%= link_to "Delete", comment_path(comment), method: :delete %>
+    <div class='is-flex is-flex-direction-column my-3'>
+      <div class='is-flex is-flex-direction-row'>
+        <%= link_to user_path(post.user_id) do %>
+          <figure class="image is-32x32 mr-2">
+            <%= image_tag avatar_for(User.find_by(id: comment.user_id)), class: 'is-rounded'%>
+          </figure>
         <% end %>
+        
+        <div>
+          <p class="is-size-7 has-text-weight-bold"><%= link_to User.find_by(id: comment.user_id).fullname, user_path(comment.user_id) %></p>
+          <p class="has-text-weight-light"><%= comment.content %></p>
+        </div>
+      </div>
+
+      <div class='is-flex is-flex-direction-row is-justify-content-space-between mt-1'>
+        <div class="is-size-7 ml-5">
+          <% if comment.user_id == current_user.id %>
+            <%= link_to "Edit", edit_comment_path(comment) %>
+            <%= link_to "Delete", comment_path(comment), method: :delete %>
+          <% end %>
+        </div>
+        <p class="is-size-7 has-text-weight-normal"><%= time_ago_in_words(comment.created_at) %></p>
       </div>
     </div>
   <% end %>

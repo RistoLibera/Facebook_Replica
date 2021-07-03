@@ -5,9 +5,11 @@
       <div class="mt-5 is-flex is-flex-direction-row is-justify-content-space-between">
         <div class="is-flex is-flex-direction-row">
           <div>
-            <figure class="image is-48x48">
-              <%= image_tag avatar_for(post.user), class: 'is-rounded'%>
-            </figure>
+            <%= link_to user_path(post.user_id) do %>
+              <figure class="image is-48x48">
+                <%= image_tag avatar_for(post.user), class: 'is-rounded'%>
+              </figure>
+            <% end %>
           </div>
           <div class="is-flex is-flex-direction-column pl-2 ">
             <div>
