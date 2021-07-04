@@ -1,14 +1,17 @@
 <% friends.each do |friend|%>
-    <div style = "display: flex;justify-content: space-around; " >
-      <div>
-        <!-- could look profile -->
-        <%= link_to "Profile", user_path(friend) %>
-      </div>
-      <div>
-        <p><%= friend.fullname %></p>
-        <!-- condition --> 
-        <p><%= link_to "Remove", request_path(Request.find_by(friend_id: friend.id),friend_id: friend.id), method: :delete %> </p>
-      </div>
+    <div class="is-flex is-flex-direction-row is-align-items-center my-2">
+      <%= link_to user_path(friend.id) do %>
+        <figure class="image is-32x32">
+          <%= image_tag avatar_for(friend), class: 'is-rounded'%>
+        </figure>
+      <% end %>
+      <%= link_to user_path(friend.id) do %>
+        <p class="has-text-black-bis has-text-weight-medium ml-2" style="width:160px;"><%= User.find_by(id: friend.id).fullname %></p>
+      <% end %>
+
+      <button class="button is-danger is-small mx-4"><%= link_to "Remove", request_path(Request.find_by(friend_id: friend.id),friend_id: friend.id), method: :delete %> </button>
     </div>
 <% end %>
+
+
 

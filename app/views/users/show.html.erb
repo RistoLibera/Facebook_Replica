@@ -1,13 +1,13 @@
-<!-- Default show user's posts-->
+<!-- Default setting shows user's posts-->
 <% content_for(:title, "Profile") %>
 <!-- user profile -->
 <%= render partial: "user_bar", locals: { user: @user } %>   
 
-<div>
+<div class="is-flex is-justify-content-center mt-3">
   <% if @user.posts.any?  %>
     <%= render partial: "posts/all_posts", locals: { posts: @user.posts } %>    
   <% else %>
-    <p>This is a lonely universe</p>
+    <p class="my-5">This is a lonely universe</p>
   <% end %>
 </div>
 

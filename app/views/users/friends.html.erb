@@ -1,8 +1,13 @@
 <% content_for(:title, "Profile") %>
 <%= render partial: "user_bar", locals: { user: @user } %> 
-  
-<% if @user.friends.any?  %>
-  <%= render partial: "users/all_friends", locals: { friends: @user.friends } %>    
-<% else %>
-  <p>No one?</p>
-<% end %>
+
+<div class="is-flex is-justify-content-center mt-3">
+  <% if @user.friends.any?  %>
+    <%= render partial: "users/all_friends", locals: { friends: @user.friends } %>    
+  <% else %>
+    <p>No one?</p>
+  <% end %>
+</div>
+
+
+
