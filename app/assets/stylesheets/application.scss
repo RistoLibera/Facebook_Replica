@@ -154,3 +154,15 @@ a { color: inherit; }
 input:focus{
   outline: none;
 }
+
+// Notification floating
+.notif-container {
+  position: relative;
+}
+
+.notif-floating {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  z-index: 99;
+}
