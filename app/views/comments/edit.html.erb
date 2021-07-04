@@ -1,6 +1,7 @@
-<div>
+<% content_for(:title, "Edit") %>
+<section class="container is-widescreen mt-10 p-4 is-flex is-flex-direction-column is-align-items-center" style="border: 1px solid #CED0D4; max-width:480px;">
   <%= form_with model: @comment do |f| %>
-    <%= f.text_field :content, placeholder: "Say you piece!" %><br>
-    <%= f.submit %>
+    <%= f.text_field :content, placeholder: "Say you piece!", size: '40', style: 'border:0;' %>
+    <%= f.submit "Update" ,class: 'button is-small is-link' %>
   <% end %>
-</div>
+</section>

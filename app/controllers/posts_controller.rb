@@ -40,7 +40,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       flash[:alert] = "Error! Post is not updated!"
-      render :edit
+      redirect_to posts_path
     end
   end
 

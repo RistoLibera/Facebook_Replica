@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div class="is-flex is-justify-content-center notification is-danger">
+  <div class="navbar is-fixed-top is-flex is-justify-content-center notification is-danger">
     <ul class="is-flex is-flex-direction-row">
       <% resource.errors.full_messages.each do |message| %>
         <li class="mr-3"><%= message %></li>
