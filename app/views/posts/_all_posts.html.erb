@@ -18,7 +18,7 @@
             <div class="is-flex is-flex-direction-row is-align-items-center">
               <p class="is-size-7 has-text-weight-medium has-text-grey"><%= time_ago_in_words(post.created_at) %></p>
               <%= link_to friends_user_path(post.user), class: 'pl-1' do %>
-                <img class="" src="https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/m_yZnvIwzjr.png" alt="Friends" width="12" height="12" style="filter:invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);">
+                <img class="facebook-filter" src="https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/m_yZnvIwzjr.png" alt="Friends" width="12" height="12">
               <% end %>
             </div>
           </div>

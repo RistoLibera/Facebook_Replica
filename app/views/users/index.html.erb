@@ -1,19 +1,66 @@
 <!-- Actually, this is friend request page -->
 <% content_for(:title, "Requests") %>
-<div class="is-flex is-justify-content-space-around">
-
-  <div>
-    <p>Fake interaction</p>
-  </div>
-  <div>
-    <h1>People You May Know</h1>
-    <!-- Friend request -->
-    <div>
-      <%= render partial: "requests/all_requests", locals: { users: @user } %>
+<div class="is-flex is-flex-direction-row is-justify-content-space-between mt-2">
+  <!-- Dummy section -->
+  <section class="is-flex is-flex-direction-column" style="width: 360px;">
+    <div class="is-flex is-flex-direction-row is-justify-content-space-between mt-1" style="border-bottom: 1px solid #CED0D4;">
+      <div class="is-size-4 has-text-black-bis ml-4">
+        <h1 class="has-text-weight-bold">Friends</h1>
+      </div>
+      <div class="is-flex is-justify-content-center is-align-items-center mt-1 mr-5 hovering" style="width:36px; height:36px;">
+        <i data-visualcompletion="css-img" class="img sp_LzDGwd4CywS_sixth facebook-filter"></i>
+      </div>
     </div>
-    <!-- Other User -->
+
+    <div class="is-flex is-flex-direction-column ml-4">
+      <div class="is-flex is-flex-direction-row is-align-items-center my-3">
+        <div class="is-flex is-justify-content-center is-align-items-center" style="background-color:#1877F2; height:36px; width:36px; border-radius:50%;">
+          <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_seventh" style="filter:invert(100%)"></i>
+        </div>
+        <p class="ml-2 is-size-6 has-text-black-bis">Home</p>
+      </div>
+
+      <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between my-3 ml-2">
+        <div class="is-flex is-flex-direction-row">
+          <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_eighth"></i>
+          <p class="ml-2 ml-4 is-size-6 has-text-black-bis">Friend Requests</p>
+        </div>
+        <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_eleventh facebook-filter" style="cursor:pointer;"></i>
+      </div>
+
+      <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between my-3 ml-2">
+        <div class="is-flex is-flex-direction-row">
+          <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_eighth"></i>
+          <p class="ml-2 ml-4 is-size-6 has-text-black-bis">Suggestions</p>
+        </div>
+        <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_eleventh facebook-filter" style="cursor:pointer;"></i>
+      </div>
+
+      <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between my-3 ml-2">
+        <div class="is-flex is-flex-direction-row">
+          <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_ninth"></i>
+          <p class="ml-2 ml-4 is-size-6 has-text-black-bis">All Friends</p>
+        </div>
+        <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_eleventh facebook-filter" style="cursor:pointer;"></i>
+      </div>
+      
+      <div class="is-flex is-flex-direction-row is-align-items-center my-3 ml-2">
+        <i data-visualcompletion="css-img" class="sp_LzDGwd4CywS_tenth"></i>
+        <p class="ml-2 ml-4 is-size-6 has-text-black-bis">Birthdays</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reqeusts section -->
+  <section>
+      <%= render partial: "requests/all_requests", locals: { users: @user } %>
+  </section>
+
+  <!-- Friends section -->
+  <section>
+    <h1>People You May Know</h1>
     <div>
       <%= render partial: "all_users", locals: { users: @user } %>    
     </div>
-  </div>
+  </section>
 </div>

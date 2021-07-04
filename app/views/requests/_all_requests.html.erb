@@ -1,15 +1,33 @@
-<!-- Should have floating icon -->
-<% Request.all.where.not(user_id: current_user.id).each do |request| %>
-  <% unless current_user.friends.any? { |friend| friend.id == request.user_id } %>
-    <div>
-      <div>
-        <%= link_to "Profile", user_path(request.user_id) %>
+<div class="is-flex is-flex-direction-column">
+  <% Request.all.where.not(user_id: current_user.id).each do |request| %>
+    <% unless current_user.friends.any? { |friend| friend.id == request.user_id } %>
+      <div class="is-flex is-flex-direction-row">
+        <div>
+          <%= link_to user_path(request.user_id) do %>
+            <figure class="image is-32x32">
+              <%= image_tag avatar_for(request.user), class: 'is-rounded'%>
+            </figure>
+          <% end %>
+        </div>
+        <p><%= link_to "Accept", requests_path(friend_id: request.user_id), method: :post %></p>
+        <p><%= link_to "Reject", request_path(request,friend_id: request.user_id), method: :delete %></p>
       </div>
-
-      <div>
-      <p><%= link_to "Accept", requests_path(friend_id: request.user_id), method: :post %> </p>
-      <p><%= link_to "Reject", request_path(request,friend_id: request.user_id), method: :delete %> </p>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+
+  <% Request.all.where.not(user_id: current_user.id).each do |request| %>
+    <% unless current_user.friends.any? { |friend| friend.id == request.user_id } %>
+      <div class="is-flex is-flex-direction-row">
+        <div>
+          <%= link_to user_path(request.user_id) do %>
+            <figure class="image is-32x32">
+              <%= image_tag avatar_for(request.user), class: 'is-rounded'%>
+            </figure>
+          <% end %>
+        </div>
+        <p><%= link_to "Accept", requests_path(friend_id: request.user_id), method: :post %></p>
+        <p><%= link_to "Reject", request_path(request,friend_id: request.user_id), method: :delete %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
