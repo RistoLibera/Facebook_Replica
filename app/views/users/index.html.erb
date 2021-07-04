@@ -52,13 +52,14 @@
   </section>
 
   <!-- Reqeusts section -->
-  <section>
+  <section class="mt-2">
+      <h1 class="is-size-4 mb-5 has-text-black-bis has-text-centered">People who sent request</h1>
       <%= render partial: "requests/all_requests", locals: { users: @user } %>
   </section>
 
   <!-- Friends section -->
-  <section>
-    <h1>People You May Know</h1>
+  <section class="mt-2 mr-6">
+    <h1 class="is-size-4 mb-5 has-text-black-bis has-text-centered">People You May Know</h1>
     <div>
       <%= render partial: "all_users", locals: { users: @user } %>    
     </div>

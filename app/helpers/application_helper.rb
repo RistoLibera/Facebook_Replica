@@ -12,7 +12,7 @@ module ApplicationHelper
     if user.cover_image.attached?
       user.cover_image
     else
-      "default.svg"
+      "default-cover.jpg"
     end
   end
 end

@@ -1,22 +1,24 @@
-<% unless users.nil? %>
-  <% users.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
-    <!-- Could only send one request per user --> 
-    <% unless Request.all.any? { |request| request.friend_id == user.id || request.user_id == user.id } %>
-      <div style = "display: flex;" >
-        <div>
-          <%= link_to "Profile", user_path(user) %>
+<div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-start">
+  <% unless users.nil? %>
+    <% users.order("created_at DESC").where.not(id: current_user.id).each do |user| %>
+      <% unless Request.all.any? { |request| request.friend_id == user.id || request.user_id == user.id } %>
+        <div class="is-flex is-flex-direction-row is-align-items-center my-2">
+          <%= link_to user_path(user) do %>
+            <figure class="image is-32x32">
+              <%= image_tag avatar_for(user), class: 'is-rounded'%>
+            </figure>
+          <% end %>
+          <%= link_to user_path(user) do %>
+            <p class="has-text-black-bis has-text-weight-medium ml-2" style="width:160px;"><%= User.find_by(id: user.id).fullname %></p>
+          <% end %>
+          <button class="button is-success is-small mx-4"><%= link_to "Send", requests_path(friend_id: user.id), method: :post %></button>
+          <button class="button is-danger is-small"><%= link_to "Remove", users_path %></button>
         </div>
-        <div>
-          <p><%= user.fullname %></p>
-          <!-- condition --> 
-          <p><%= link_to "Add", requests_path(friend_id: user.id), method: :post %> </p>
-          <p><%= link_to "Remove",root_path %> </p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <p>No one</p>
   <% end %>
-<% else %>
-  <p>No one</p>
-<% end %>
 
 
+</div>
