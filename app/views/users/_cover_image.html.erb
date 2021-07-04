@@ -1,10 +1,10 @@
 <%= form_with model: user do |f| %>
-  <div>
-    <label>Add Cover Image
-      <span>
-        <%= f.file_field :cover_image, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()" %>
-      </span>
+  <div class="image-upload">
+    <label class="image-upload tag is-small is-large has-text-dark is-size-5" for="file-input" style="">
+      <i class="fa fa-camera fa-xs"></i>
+      <p class="is-size-7 pl-1 has-text-weight-bold has-text-black-bis">Add Cover Photo</p>
     </label>
+    <%= f.file_field :cover_image, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()", id: 'file-input' %>
   </div>
 <% end %>
 

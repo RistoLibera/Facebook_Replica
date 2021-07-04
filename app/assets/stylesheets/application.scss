@@ -17,6 +17,7 @@ $spacing-values: (
 
 $input-placeholder-color: #90949c;
 
+$dimensions: 16 24 32 48 64 96 128 168 !default;
 // Bulma Framework
 @import "bulma";
 
@@ -212,7 +213,7 @@ a { color: inherit; }
   display: none;
 }
 .image-upload > label{
-  cursor:pointer;
+  cursor: pointer;
 }
 
 // Input focus effect

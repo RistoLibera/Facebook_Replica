@@ -1,9 +1,10 @@
 <%= form_with model: user do |f| %>
-  <div>
-    <label>Add Avatar Image
-      <span>
-        <%= f.file_field :avatar, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()" %>
-      </span>
+  <div class="image-upload">
+    <label class="image-upload is-size-5 is-flex is-justify-content-center is-align-items-center" for="file-input" style="display:inline-block; height:36px; width:36px; background-color:white; border-radius:50%;">
+      <i class="fa fa-camera"></i>
     </label>
+    <%= f.file_field :avatar, accept: 'image/jpg, image/jpeg, image/png', onchange: "form.submit()", id: 'file-input' %>
   </div>
 <% end %>
+
+
