@@ -7,14 +7,18 @@ class LikingsController < ApplicationController
 
   def create
     @liking = current_user.likings.build(post_id: params[:post_id])
-    if @liking.save
-      flash[:notice] = "Liking is created!"
-      # notif
-      send_liking_notification(params[:post_id])
-    else
-      flash[:alert] = "Error! Liking is not created!"
-    end
-    redirect_to posts_path
+    @target_post = Post.find_by(id: params[:post_id])
+    @target_user = User.find_by(id: @target_post.user_id) 
+      if @liking.save
+        flash[:notice] = "Liking is created!"
+        # notif
+        if @target_user.id != current_user.id
+          send_liking_notification(params[:post_id])
+        end
+      else
+        flash[:alert] = "Error! Liking is not created!"
+      end
+      redirect_to posts_path
   end
 
   def destroy
