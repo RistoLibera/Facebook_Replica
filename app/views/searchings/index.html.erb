@@ -1,15 +1,15 @@
 <% content_for(:title, "Searching") %>
-<div style = "display: flex; justify-content: space-around;" >
-  <div>
-    <h1>Old Searchings</h1>
+<div class="is-flex is-justify-content-space-between mt-3" >
+  <div class="has-text-centered ml-5">
+    <h1 class="title is-4 mb-4">Old Searchings</h1>
     <%= render partial: "searchings/old_searchings" %>    
   </div>
-  <div>
-    <h1>Posts</h1>
+  <div class="has-text-centered">
+    <h1 class="is-size-4 mb-3">Posts</h1>
     <%= render partial: "posts/all_posts", locals: { posts: @posts } %>    
   </div>
-  <div>
-    <h1>People</h1>
+  <div class="mr-5">
+    <h1 class="is-size-4 mb-2 has-text-centered">People</h1>
     <%= render partial: "users/all_users", locals: { users: @users } %>    
   </div>
 </div>

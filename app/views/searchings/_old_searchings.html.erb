@@ -4,10 +4,12 @@
   <% old_searchings.each do |searching| %>
     <%= form_with model: Searching.new do |f| %>
       <%= f.hidden_field :word, value: searching.word %>
-      <div>
-        <button>
+      <div class="is-flex is-flex-direction-row is-justify-content-space-between" style="max-width:140px;">
+        <button class="button is-small is-rounded is-light">
           <%= f.hidden_field :commit %>
-          <%= searching.word %>
+          <p class="is-size-6">
+            <%= searching.word %>
+          </p>
         </button>
         <%= link_to searching_path(searching), method: :delete, data: { confirm: "Delete?" } do %>
           <span>X</span>
