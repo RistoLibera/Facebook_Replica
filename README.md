@@ -5,6 +5,8 @@
 - This is a simple replica of Facebook, within which has a set of basic functions to
   prove my understanding of Ruby on Rails.
 
+- Online: https://facebook-replica.herokuapp.com/
+- Local:  http://localhost:3000/
 
 ## What does this has
 
@@ -26,8 +28,9 @@
 
 ### Via Facebook
 
-- You can link to Facebook to create a new account.
-- You will see the name and email are autofilled.
+- You can link to Facebook to create a new account(locally).
+- You will see the name and email are autofilled(locally).
+- PROBLEM: Facebook changed their authentication-system recently, which means the function doesn't work online, but i'm still thinking about a work-around.
 
 ## Initial Setup
 
