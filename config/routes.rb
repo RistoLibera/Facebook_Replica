@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "posts#index"  
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-
+  
   resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       get "delete_attachment"
@@ -21,6 +21,4 @@ Rails.application.routes.draw do
     end
   end
   resources :searchings, only: [:create, :index, :destroy]
-
-
 end

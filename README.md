@@ -27,7 +27,7 @@
 ### Via Facebook
 
 - You can link to Facebook to create a new account.
-- You will see the name and email is autofilled.
+- You will see the name and email are autofilled.
 
 ## Initial Setup
 

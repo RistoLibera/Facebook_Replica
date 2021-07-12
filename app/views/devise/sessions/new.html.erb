@@ -1,7 +1,7 @@
 <% content_for(:title, "Home") %>
 
 <section class="container is-widescreen">
-  <div class="is-flex is-justify-content-space-between mt-6 mx-7">
+  <div class="is-flex is-justify-content-space-between mt-3 mx-7">
     <div class="mr-5 mt-8" style="width: 580px;">
       <div style="width: 301px;">
         <img style="margin: -28px;" src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook">
@@ -46,7 +46,7 @@
         <%= render "devise/shared/links" %>
       </div>
       <div class="mt-4">
-        <%= link_to "But you can sign in with Facebook(really?)", user_facebook_omniauth_authorize_path, class: 'is-block is-fullwidth has-text-centered' %>
+        <%= link_to "But you can sign in with Facebook(really?)", user_facebook_omniauth_authorize_path, class: 'is-block is-fullwidth has-text-centered', method: :post %>
       </div>
     </div>
   </div>
