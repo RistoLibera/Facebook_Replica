@@ -3,7 +3,7 @@
 <!-- user profile -->
 <%= render partial: "user_bar", locals: { user: @user } %>   
 
-<div class="is-flex is-justify-content-center mt-3">
+<div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center mt-3">
   <% if @user.posts.any?  %>
     <%= render partial: "posts/all_posts", locals: { posts: @user.posts } %>    
   <% else %>
