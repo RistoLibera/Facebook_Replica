@@ -27,7 +27,7 @@
     <div class="pr-2">
       <%= link_to user_path(current_user), method: 'get', class: "nav-link" do %>
         <figure class="image is-32x32">
-          <%= image_tag avatar_for(current_user), class: 'is-rounded mt-2'%>
+          <%= image_tag avatar_for(current_user), class: 'is-rounded mt-2', style: 'height: 32px;'%>
         </figure>
       <% end %>
     </div>

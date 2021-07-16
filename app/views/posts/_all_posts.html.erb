@@ -7,7 +7,7 @@
           <div>
             <%= link_to user_path(post.user_id) do %>
               <figure class="image is-48x48">
-                <%= image_tag avatar_for(post.user), class: 'is-rounded'%>
+                <%= image_tag avatar_for(post.user), class: 'is-rounded', style: 'height: 48px;'%>
               </figure>
             <% end %>
           </div>

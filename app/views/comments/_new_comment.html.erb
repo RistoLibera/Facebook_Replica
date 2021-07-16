@@ -1,6 +1,6 @@
 <%= form_with model: Comment.new, class: 'is-flex is-flex-direction-row is-justify-content-space-between' do |f| %>
   <figure class="image is-32x32 mr-2">
-    <%= image_tag avatar_for(current_user), class: 'is-rounded'%>
+    <%= image_tag avatar_for(current_user), class: 'is-rounded', style: 'height: 32px;'%>
   </figure>
   <%= f.hidden_field :post_id, value: post.id %>
   <%= f.text_field :content, placeholder: "Say you piece!", size: '40',style: 'border:0;' %>
