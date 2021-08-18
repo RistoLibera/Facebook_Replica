@@ -2,7 +2,7 @@
 
 ## What is this for
 
-- This is a simple replica of Facebook, within which has a set of basic functions to
+- This is a simple replica of Facebook, within which has a set of basic functionality to
   prove my understanding of Ruby on Rails.
 
 - Online: https://facebook-replica.herokuapp.com/
