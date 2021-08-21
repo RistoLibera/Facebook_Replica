@@ -10,7 +10,7 @@
 
 ## What does this have
 
-### As User
+### As user
 
 - You can create user by firstname, lastname, birthday and gender.
 - You can edit your password.
@@ -18,7 +18,7 @@
 - You can add friends or delete friends.
 - You can search for what you like.
 
-### For Post
+### For post
 
 - You can create, edit, delete your own posts.
 - You can upload images to posts.
@@ -71,7 +71,3 @@ $ https://localhost:3000
 
 - Email: 123456@123456.com
 - Password: 123456
-
-
-
-
