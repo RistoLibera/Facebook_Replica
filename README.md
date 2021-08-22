@@ -46,9 +46,9 @@ $ git clone git@github.com:RistoLibera/Facebook_Replica.git
 $ bundle install
 ```
 
-- Intialize figaro
+- Intialize webpack
 ```ruby
-$ bundle exec figaro install
+$ rails webpacker:install
 ```
 
 - Migrate database
