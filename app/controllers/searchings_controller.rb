@@ -4,16 +4,16 @@ class SearchingsController < ApplicationController
     @word = searching_params[:word]
     @searching = current_user.searchings.build(word: @word)
     flash[:notice] = "New searching is performed!" if @searching.save
-    @users = User.where("firstname LIKE ? OR lastname LIKE ?", "%#{@word}%", "%#{@word}%")
-    @posts = Post.where("body LIKE ?", "%#{@word}%")
+    @users = User.where("firstname ILIKE ? OR lastname ILIKE ?", "%#{@word}%", "%#{@word}%")
+    @posts = Post.where("body ILIKE ?", "%#{@word}%")
     render :index
   end
 
   def index
     if current_user.searchings.any?
       @word = current_user.searchings.last.word
-      @users = User.where("firstname LIKE ? OR lastname LIKE ?", "%#{@word}%", "%#{@word}%")
-      @posts = Post.where("body LIKE ?", "%#{@word}%")
+      @users = User.where("firstname ILIKE ? OR lastname ILIKE ?", "%#{@word}%", "%#{@word}%")
+      @posts = Post.where("body ILIKE ?", "%#{@word}%")
     else
       @users = nil
       @posts = nil
