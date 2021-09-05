@@ -5,7 +5,7 @@
 - This is a simple replica of Facebook, within which has a set of basic functionality to
   prove my understanding of Ruby on Rails and Bulma Framework.
 
-- Online: https://facebook-replica.herokuapp.com/
+- Online: https://a-facebook-replica.herokuapp.com/
 - Local:  http://localhost:3000/
 
 ## What does this have
