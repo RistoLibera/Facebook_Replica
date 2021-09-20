@@ -30,7 +30,7 @@
 
 - You can link to Facebook to create a new account(locally).
 - You will see the name and email are autofilled(locally).
-- PROBLEM: Facebook changed their authentication-system recently, which means the function doesn't work online, but i'm still thinking about a work-around.
+- PROBLEM: Facebook changed their authentication system recently, which means the function doesn't work online, but i'm still thinking about a working-around.
 
 ## Initial Setup
 
