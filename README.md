@@ -1,4 +1,6 @@
 # Project: Facebook_Replica
+- Part of Odin Project: Rails Final Project.
+- Class URL: https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/rails-final-project
 
 ## What is this
 
