@@ -31,9 +31,11 @@ class User < ApplicationRecord
   # Facebook-Omniauth; email is not returned while being api creator.
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      space = auth.info.name.index(' ')
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      user.lastname = auth.info.name
+      user.firstname = auth.info.name[0, space]
+      user.lastname = auth.info.name[space+1..-1]
       # user.image = auth.info.image 
     end
   end
