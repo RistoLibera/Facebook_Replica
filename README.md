@@ -40,33 +40,33 @@
 
 - Clone repository
 ```ruby
-$ git clone git@github.com:RistoLibera/Facebook_Replica.git
+git clone git@github.com:RistoLibera/Facebook_Replica.git
 ```
 
 - Install gems
 ```ruby
-$ bundle install
+bundle install
 ```
 
 - Intialize webpack
 ```ruby
-$ rails webpacker:install
+rails webpacker:install
 ```
 
 - Migrate database
 ```ruby
-$ rails db:migrate
-$ rails db:seed
+rails db:migrate
+rails db:seed
 ```
 
 - Create server
 ```ruby
-$ rails server
+rails server
 ```
 
 - Browse content
 ```ruby
-$ https://localhost:3000
+https://localhost:3000
 ```
 
 ### Test Account
